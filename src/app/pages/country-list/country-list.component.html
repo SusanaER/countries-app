@@ -1,1 +1,22 @@
-<p>country-list works!</p>
+<table class="table table-striped table-dark">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Capital</th>
+            <th>Region</th>
+            <th>Languages</th>
+            <th>Population</th>
+            <th>Flag</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let c of countries">
+            <td>{{c.name}}</td>
+            <td>{{c.capital | capital}}</td>
+            <td>{{c.region}}</td>
+            <td>{{c.languages | language}}</td>
+            <td>{{c.population}}</td>
+            <td>{{c.flag}}</td>
+        </tr>
+    </tbody>
+</table>

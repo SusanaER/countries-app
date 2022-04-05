@@ -17,7 +17,8 @@ export const environment = {
   
     appId: "1:304970335630:web:d4612679ecc1f1ff4d90df"
   
-  }
+  },
+  ALL_COUNTRIES_URL: "https://restcountries.com/v3.1/all"
 };
 
 const app = initializeApp(environment.firebaseConfig);
