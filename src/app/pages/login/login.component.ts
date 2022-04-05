@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import firebase from 'firebase/compat';
 import UserCredential = firebase.auth.UserCredential;
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -18,6 +19,7 @@ export class LoginComponent implements OnInit {
   constructor(private router: Router, 
     private authService: AuthService, 
     private formBuilder: FormBuilder) { }
+
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
@@ -36,7 +38,7 @@ export class LoginComponent implements OnInit {
   }
 
   loginFirebase(): void {
-    this.errorMessage ="";
+    this.errorMessage ='';
     this.authService.loginWithFirebase(this.loginForm.getRawValue()).then(
       (credentials) => {
         this.authService.storeToken(credentials.user.uid);
@@ -58,7 +60,7 @@ export class LoginComponent implements OnInit {
       case "auth/user-disabled":
         return "Usuario inactivo";
       default:
-        return "Error desconocido";
+        return "Correo Invalido";
     }
   }
 }

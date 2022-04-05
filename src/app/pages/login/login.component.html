@@ -12,12 +12,10 @@
                     <p>
                         <input type="password" formControlName="password" placeholder="Contraseña"/>
                     </p>
-                    <ng-template>
-                        <div class="mb-3" [ngIf]="errorMessage || errorMessage !== ''">
+                    <ng-template  [ngIf]="errorMessage || errorMessage == ''">
                             <div class="alert alert-danger" role="alert">
                                 {{errorMessage}}
                             </div>
-                        </div>
                     </ng-template>
                     <p>
                         <!--<button (click)="login()">Ingresar</button>-->
